@@ -70,8 +70,13 @@
                                         </form>
                                     </li>
                                     <li>
-                                        <a href="{{ route('ibo.index') }}">New Member</a>
+                                        <a href="{{ url('/ibo') }}">New Member</a>
                                     </li>
+                                    @if (Auth::user()->role == 'admin')
+                                        <li>
+                                            <a href="{{ url('rankinglions') }}">Ranking Lions</a>
+                                        </li>
+                                    @endif
                                 </ul>
                             </li>
                         @endif

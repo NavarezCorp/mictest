@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Ibo;
+use DB;
+use App\RankingLions;
 
-class IboController extends Controller
+class RankingLionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,8 @@ class IboController extends Controller
     public function index()
     {
         //
-        return view('ibo/index');
+        $data = DB::table('ranking_lions')->orderBy('id', 'desc')->paginate(15);
+        return view('rankinglions.index', ['data'=>$data]);
     }
 
     /**
@@ -27,7 +29,7 @@ class IboController extends Controller
     public function create()
     {
         //
-        echo 'ibo create';
+        return view('rankinglions.create');
     }
 
     /**
@@ -39,21 +41,13 @@ class IboController extends Controller
     public function store(Request $request)
     {
         //
-        //var_dump($request->has('is_admin'));
-        
-        $model = new Ibo;
-        $model->firstname = $request->firstname;
-        $model->middlename = $request->middlename;
-        $model->lastname = $request->lastname;
-        $model->is_part_company = $request->has('is_part_company');
-        $model->sponsor_id = $request->sponsor_id;
-        $model->placement_id = $request->placement_id;
-        $model->placement_position = $request->placement_position;
-        $model->total_purchase_amount = $request->total_purchase_amount;
-        $model->ranking_lions_id = $request->ranking_lions_id;
-        $model->is_admin = $request->has('is_admin');
+        $model = new RankingLions;
+        $model->name = $request->name;
+        $model->description = $request->description;
+        $model->app = $request->app;
+        $model->agp = $request->agp;
+        $model->rebates_system_id = $request->rebates_system_id;
         $model->save();
-        
     }
 
     /**
