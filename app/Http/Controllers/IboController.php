@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use App\Ibo;
 
 class IboController extends Controller
 {
@@ -39,7 +39,18 @@ class IboController extends Controller
     public function store(Request $request)
     {
         //
-        return 'ibo store';
+        $ibo = new Ibo;
+        $ibo->firstname = $request->firstname;
+        $ibo->middlename = $request->middlename;
+        $ibo->lastname = $request->lastname;
+        $ibo->is_part_company = $request->is_part_company;
+        $ibo->sponsor_id = $request->sponsor_id;
+        $ibo->placement_id = $request->placement_id;
+        $ibo->placement_position = $request->placement_position;
+        $ibo->total_purchase_amount = $request->total_purchase_amount;
+        $ibo->ranking_lions_id = $request->ranking_lions_id;
+        $ibo->is_admin = $request->is_admin;
+        $ibo->save();
     }
 
     /**

@@ -70,7 +70,7 @@
                                         </form>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/newmember') }}">New Member</a>
+                                        <a href="{{ route('ibo.index') }}">New Member</a>
                                     </li>
                                 </ul>
                             </li>

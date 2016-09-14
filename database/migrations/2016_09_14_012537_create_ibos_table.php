@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIboTable extends Migration
+class CreateIbosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateIboTable extends Migration
      */
     public function up()
     {
-        Schema::create('ibo', function (Blueprint $table) {
-            $table->increments('id')->index();
+        Schema::create('ibos', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('firstname', 255);
             $table->string('middlename', 255);
             $table->string('lastname', 255);
@@ -36,6 +36,6 @@ class CreateIboTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ibo');
+        Schema::dropIfExists('ibos');
     }
 }
