@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/greywolf/working/mictest/Homestead.yaml</file>
-            <file>file:/home/greywolf/working/mictest/public/index.php</file>
+            <file>file:/home/greywolf/working/mictest-staging/app/Http/Controllers/IboController.php</file>
+            <file>file:/home/greywolf/working/mictest-staging/resources/views/ibo/index.blade.php</file>
+            <file>file:/home/greywolf/working/mictest-staging/resources/views/layouts/app.blade.php</file>
+            <file>file:/home/greywolf/working/mictest-staging/routes/web.php</file>
+            <file>file:/home/greywolf/working/mictest-staging/resources/views/home.blade.php</file>
         </group>
     </open-files>
 </project-private>
