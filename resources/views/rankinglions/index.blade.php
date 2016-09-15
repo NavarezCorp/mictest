@@ -33,12 +33,12 @@
                                     <td>{{ $value->name }}</td>
                                     <td>{{ $value->description }}</td>
                                     <td class="table-tools-column">
-                                        <a href="{{ route('city.show', $value->id) }}">
+                                        <a href="{{ route('rankinglions.show', $value->id) }}">
                                             <i class="glyphicon glyphicon-eye-open"></i>
                                         </a>
                                     </td>
                                     <td class="table-tools-column">
-                                        <a href="{{ route('city.edit', $value->id) }}">
+                                        <a href="{{ route('rankinglions.edit', $value->id) }}">
                                             <i class="glyphicon glyphicon-pencil"></i>
                                         </a>
                                     </td>

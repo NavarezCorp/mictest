@@ -13,7 +13,43 @@ require('laravel-elixir-vue');
  |
  */
 
+var paths = {
+    'jquery': './vendor/components/jquery/',
+    'jqueryui': './vendor/components/jquery-ui/',
+    'bootstrap': './vendor/twbs/bootstrap/dist/',
+    'fontawesome': './vendor/fortawesome/font-awesome/',
+    'typeahead': './vendor/twitter/typeahead.js/dist/',
+}
+
 elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+    //mix.sass('app.scss').webpack('app.js');
+    mix.sass(
+        'app.scss',
+        'public/css/',
+        {
+            includePaths: [
+                paths.bootstrap + 'assets/stylesheets',
+                paths.fontawesome + 'scss',
+            ]
+        }
+    )
+    .styles(
+        [
+            paths.jqueryui + 'themes/smoothness',
+        ]
+    )
+    .scripts(
+        [
+            paths.jquery + 'dist/jquery.min.js',
+            paths.jqueryui + 'jquery-ui.min.js',
+            paths.jqueryui + 'ui',
+            paths.bootstrap + 'assets/javascripts/bootstrap.min.js',
+            paths.typeahead + 'dist/typeahead.jquery.min.js'
+        ],
+        'public/js/vendor.js'
+    )
+    .copy('resources/assets/js/app.js', 'public/js/app.js')
+    .copy(paths.bootstrap + 'assets/fonts/bootstrap', 'public/fonts/bootstrap')
+    .copy(paths.jqueryui + 'themes/smoothness/images', 'public/css/images')
+    .copy(paths.fontawesome + 'fonts', 'public/fonts');
 });

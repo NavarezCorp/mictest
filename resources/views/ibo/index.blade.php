@@ -83,20 +83,6 @@
                                     </div>
                                 </div>
                                 
-                                <div class="form-group{{ $errors->has('ranking_lions_id') ? ' has-error' : '' }}">
-                                    <label for="ranking_lions_id" class="col-md-4 control-label">Ranking Lions ID</label>
-
-                                    <div class="col-md-6">
-                                        <input id="ranking_lions_id" type="text" class="form-control" name="ranking_lions_id" required>
-
-                                        @if ($errors->has('ranking_lions_id'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('ranking_lions_id') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                
                                 <div class="form-group{{ $errors->has('placement_position') ? ' has-error' : '' }}">
                                     <label for="placement_position" class="col-md-4 control-label">Placement position</label>
 
@@ -106,20 +92,6 @@
                                         @if ($errors->has('placement_position'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('placement_position') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group{{ $errors->has('total_purchase_amount') ? ' has-error' : '' }}">
-                                    <label for="total_purchase_amount" class="col-md-4 control-label">Total purchase amount</label>
-
-                                    <div class="col-md-6">
-                                        <input id="total_purchase_amount" type="text" class="form-control" name="total_purchase_amount" required>
-
-                                        @if ($errors->has('total_purchase_amount'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('total_purchase_amount') }}</strong>
                                             </span>
                                         @endif
                                     </div>

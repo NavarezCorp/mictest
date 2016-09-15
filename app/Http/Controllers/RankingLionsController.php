@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use App\RankingLions;
+use Session;
 
 class RankingLionsController extends Controller
 {
@@ -48,6 +49,9 @@ class RankingLionsController extends Controller
         $model->agp = $request->agp;
         $model->rebates_system_id = $request->rebates_system_id;
         $model->save();
+        
+        Session::flash('message', 'Ranking Lions named "' . $request->name . '" was successfully created');
+        return redirect('/rankinglions');
     }
 
     /**
