@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
+use App\ProductPurchase;
+use Session;
 
 class ProductPurchaseController extends Controller
 {
@@ -28,6 +30,7 @@ class ProductPurchaseController extends Controller
     public function create()
     {
         //
+        return view('productpurchase.create');
     }
 
     /**
@@ -39,6 +42,13 @@ class ProductPurchaseController extends Controller
     public function store(Request $request)
     {
         //
+        $model = new ProductPurchase;
+        $model->ibo_id = $request->ibo_id;
+        $model->purchase_amount = $request->purchase_amount;
+        $model->save();
+        
+        Session::flash('message', 'Product purchase of "' . $request->ibo_id . '" was successfully saved');
+        return redirect('/productpurchase');
     }
 
     /**

@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Manage Product Purchase
+                    <a class="pull-right" href="{{ route('productpurchase.create') }}">Add</a>
                 </div>
 
                 <div class="panel-body">
