@@ -16,7 +16,7 @@ class ProductPurchaseController extends Controller
     public function index()
     {
         //
-        $data = DB::table('product_purchase')->orderBy('id', 'desc')->paginate(15);
+        $data = DB::table('product_purchases')->orderBy('id', 'desc')->paginate(15);
         return view('productpurchase.index', ['data'=>$data]);
     }
 
