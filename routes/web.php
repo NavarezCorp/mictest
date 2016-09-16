@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('ibo', 'IboController');
 Route::resource('rankinglions', 'RankingLionsController');
+Route::resource('rebatessystems', 'RebatesSystemsController');

@@ -70,11 +70,14 @@
                                         </form>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/ibo') }}">New Member</a>
+                                        <a href="{{ url('/ibo') }}">IBO</a>
                                     </li>
                                     @if (Auth::user()->role == 'admin')
                                         <li>
                                             <a href="{{ url('rankinglions') }}">Ranking Lions</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('rebatessystems') }}">Rebates System</a>
                                         </li>
                                     @endif
                                 </ul>

@@ -6,8 +6,8 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Manage IBO
-                    <a class="pull-right" href="{{ route('ibo.create') }}">Add</a>
+                    Manage Commissions
+                    <a class="pull-right" href="{{ route('commissions.create') }}">Add</a>
                 </div>
 
                 <div class="panel-body">
@@ -21,30 +21,24 @@
                     <table class="table table-striped table-hover table-condensed">
                         <thead>
                             <th>ID</th>
-                            <th>Firstname</th>
-                            <th>Middle</th>
-                            <th>Lastname</th>
-                            <th>Sponsor ID</th>
-                            <th>Placement Position</th>
-                            <th>Ranking Lion</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th></th>
+                            <th></th>
                         </thead>
                         <tbody>
                             @foreach ($data as $key => $value)
                                 <tr>
                                     <td>{{ $value->id }}</td>
-                                    <td>{{ $value->firstname }}</td>
-                                    <td>{{ $value->middlename }}</td>
-                                    <td>{{ $value->lastname }}</td>
-                                    <td>{{ $value->sponsor_id }}</td>
-                                    <td>{{ $value->placement_position }}</td>
-                                    <td>{{ $value->ranking_lions_id }}</td>
+                                    <td>{{ $value->name }}</td>
+                                    <td>{{ $value->description }}</td>
                                     <td class="table-tools-column">
-                                        <a href="{{ route('rankinglions.show', $value->id) }}">
+                                        <a href="{{ route('commissions.show', $value->id) }}">
                                             <i class="glyphicon glyphicon-eye-open"></i>
                                         </a>
                                     </td>
                                     <td class="table-tools-column">
-                                        <a href="{{ route('rankinglions.edit', $value->id) }}">
+                                        <a href="{{ route('commissions.edit', $value->id) }}">
                                             <i class="glyphicon glyphicon-pencil"></i>
                                         </a>
                                     </td>

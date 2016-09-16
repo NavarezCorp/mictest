@@ -22,8 +22,8 @@ class CreateIbosTable extends Migration
             $table->integer('sponsor_id')->index();
             $table->integer('placement_id')->index();
             $table->string('placement_position', 1);
-            $table->decimal('total_purchase_amount', 9, 2);
-            $table->integer('ranking_lions_id')->index();
+            $table->decimal('total_purchase_amount', 9, 2)->nullable();
+            $table->integer('ranking_lions_id')->nullable()->index();
             $table->boolean('is_admin');
             $table->timestamps();
         });

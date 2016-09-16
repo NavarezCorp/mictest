@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRebatesSystemTable extends Migration
+class CreateRebatesSystemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRebatesSystemTable extends Migration
      */
     public function up()
     {
-        Schema::create('rebates_system', function (Blueprint $table) {
+        Schema::create('rebates_systems', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('level');
             $table->string('percentage', 5);
@@ -29,6 +29,6 @@ class CreateRebatesSystemTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rebates_system');
+        Schema::dropIfExists('rebates_systems');
     }
 }
