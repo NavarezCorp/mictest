@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Add Ranking Lions</div>
+                <div class="panel-heading">Add Commission</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/rankinglions') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/commissions') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -39,52 +39,24 @@
                             </div>
                         </div>
                         
-                        <div class="form-group{{ $errors->has('app') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">APP</label>
+                        <div class="form-group{{ $errors->has('amount') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Amount</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="app" value="{{ old('app') }}">
+                                <input type="text" class="form-control" name="amount" value="{{ old('amount') }}">
 
-                                @if ($errors->has('app'))
+                                @if ($errors->has('amount'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('app') }}</strong>
+                                        <strong>{{ $errors->first('amount') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         
-                        <div class="form-group{{ $errors->has('agp') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">AGP</label>
-
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="agp" value="{{ old('agp') }}">
-
-                                @if ($errors->has('agp'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('agp') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        
-                        <div class="form-group{{ $errors->has('rebates_system_id') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Rebate System ID</label>
-
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="rebates_system_id" value="{{ old('rebates_system_id') }}">
-
-                                @if ($errors->has('rebates_system_id'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('rebates_system_id') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">Submit</button>
-                                <a href="{{ url('/rankinglions') }}" class="btn btn-default">Cancel</a>
+                                <a href="{{ url('/commissions') }}" class="btn btn-default">Cancel</a>
                             </div>
                         </div>
                     </form>

@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
-use App\Commissions;
-use Session;
 
-class CommissionsController extends Controller
+class ProductPurchaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +16,8 @@ class CommissionsController extends Controller
     public function index()
     {
         //
-        $data = DB::table('commissions')->orderBy('id', 'desc')->paginate(15);
-        return view('commissions.index', ['data'=>$data]);
+        $data = DB::table('product_purchase')->orderBy('id', 'desc')->paginate(15);
+        return view('productpurchase.index', ['data'=>$data]);
     }
 
     /**
@@ -30,7 +28,6 @@ class CommissionsController extends Controller
     public function create()
     {
         //
-        return view('commissions.create');
     }
 
     /**
@@ -42,14 +39,6 @@ class CommissionsController extends Controller
     public function store(Request $request)
     {
         //
-        $model = new Commissions;
-        $model->name = $request->name;
-        $model->description = $request->description;
-        $model->amount = $request->amount;
-        $model->save();
-        
-        Session::flash('message', 'Commission named "' . $request->name . '" was successfully created');
-        return redirect('/commissions');
     }
 
     /**

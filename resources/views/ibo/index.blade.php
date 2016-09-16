@@ -27,6 +27,8 @@
                             <th>Sponsor ID</th>
                             <th>Placement Position</th>
                             <th>Ranking Lion</th>
+                            <th></th>
+                            <th></th>
                         </thead>
                         <tbody>
                             @foreach ($data as $key => $value)

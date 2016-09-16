@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductPurchaseTable extends Migration
+class CreateProductPurchasesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateProductPurchaseTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_purchase', function (Blueprint $table) {
+        Schema::create('product_purchases', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ibo_id')->index();
             $table->decimal('purchase_amount', 9, 2);
@@ -28,6 +28,6 @@ class CreateProductPurchaseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_purchase');
+        Schema::dropIfExists('product_purchases');
     }
 }

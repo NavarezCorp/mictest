@@ -79,6 +79,12 @@
                                         <li>
                                             <a href="{{ url('rebatessystems') }}">Rebates System</a>
                                         </li>
+                                        <li>
+                                            <a href="{{ url('commissions') }}">Commissions</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('productpurchase') }}">Product Purchase</a>
+                                        </li>
                                     @endif
                                 </ul>
                             </li>

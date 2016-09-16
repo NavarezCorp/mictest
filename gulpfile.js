@@ -12,7 +12,7 @@ require('laravel-elixir-vue');
  | file for our application, as well as publishing vendor resources.
  |
  */
-
+/*
 var paths = {
     'jquery': './vendor/components/jquery/',
     'jqueryui': './vendor/components/jquery-ui/',
@@ -52,4 +52,18 @@ elixir(mix => {
     .copy(paths.bootstrap + 'assets/fonts/bootstrap', 'public/fonts/bootstrap')
     .copy(paths.jqueryui + 'themes/smoothness/images', 'public/css/images')
     .copy(paths.fontawesome + 'fonts', 'public/fonts');
+});
+*/
+
+var paths = {
+    'bootstrap': './node_modules/bootstrap-sass/'
+}
+
+elixir(function(mix) {
+    mix.sass([    
+        'app.scss',
+        'variables.scss'
+    ])
+    .webpack('app.js')
+    .copy(paths.bootstrap + 'assets/fonts/bootstrap', 'public/fonts/bootstrap');
 });
